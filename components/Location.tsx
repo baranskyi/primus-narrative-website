@@ -37,11 +37,11 @@ export function Location() {
               Hours
             </div>
             <p className="font-serif text-[22px] md:text-[24px] leading-[1.25] tracking-tight mt-3 md:mt-4">
-              Sun — Thu <br />
-              09:00 — 18:00 GST
+              Mon — Fri <br />
+              10:00 — 18:00 GST
             </p>
             <p className="text-[13px] text-mute mt-3">
-              By appointment on Friday &amp; Saturday
+              By appointment on Saturday &amp; Sunday
             </p>
           </div>
         </div>
