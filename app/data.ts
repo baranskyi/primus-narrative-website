@@ -28,7 +28,7 @@ export const services: Service[] = [
     title: "Public & Corporate Communications",
     tagline: "Reputation, narrative, influence.",
     description:
-      "Strategic communications for executives, boards and high-stakes initiatives — from brand governance to crisis response. EU, UK, US and MENA track record, with direct experience advising ministries, platforms and enterprise brands.",
+      "Strategic communications for executives, boards and high-stakes initiatives — from brand governance to crisis response. EU, UK, US and MENA track record, with direct experience advising governmental projects, commercial platforms and enterprise brands.",
     deliverables: [
       "Corporate narrative & brand governance",
       "Executive positioning and thought leadership",
@@ -42,7 +42,7 @@ export const services: Service[] = [
     title: "Digital Growth & Performance",
     tagline: "Paid, organic, and everything in between.",
     description:
-      "Full-stack digital promotion of products and services online — performance marketing, SEO, content engines, conversion optimisation and lifecycle automation. Operated by a team that actually ships the code behind the systems.",
+      "Full-stack digital promotion of products and services online — performance marketing, SEO, content engines, conversion optimisation and lifecycle automation. Operated by a team with hands-on engineering experience behind the systems.",
     deliverables: [
       "Paid media (Meta, Google, LinkedIn, X)",
       "SEO, programmatic content, AI search (AEO/GEO)",
@@ -118,7 +118,7 @@ export const founders: Founder[] = [
     short:
       "Growth-focused CMO, FCIM, and serial founder. 15+ years leading marketing strategy, brand building and automation across media, tech and fitness.",
     bio:
-      "Slava is a Chartered Marketer (Fellow of the Chartered Institute of Marketing) and Executive MBA candidate at IE Business School. He has led projects that attracted millions of users, generated 8-figure revenues, and built viral communities — including LIFEHACKER.RU (32M+ monthly users), Ukraine's first fully automated fitness club ecosystem, and the premium corporate media agency Palindrome. He is a CMO who actually ships code: he builds agentic marketing systems in production, not slideware.",
+      "Slava is a Chartered Marketer (Fellow of the Chartered Institute of Marketing) and Executive MBA candidate at IE Business School. He has led projects that attracted millions of users, generated 8-figure revenues, and built viral communities — including LIFEHACKER.RU (32M+ monthly users), Ukraine's first fully automated fitness club ecosystem, and the premium corporate media agency Palindrome. A CMO with an engineering mindset, he designs and operates agentic marketing systems in production rather than on slides.",
     credentials: [
       "FCIM — Chartered Institute of Marketing (Fellow)",
       "Executive MBA candidate, IE Business School",

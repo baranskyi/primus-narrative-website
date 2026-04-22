@@ -99,8 +99,9 @@ export function Founders() {
             </h2>
             <p className="text-[17px] md:text-[18px] text-ink-2 leading-[1.5] max-w-[62ch] mt-5 md:mt-6">
               Two senior operators with complementary craft: a growth-focused
-              CMO who ships systems, and a communications strategist who has
-              advised governments and international PR networks.
+              CMO with deep operational experience, and a communications
+              strategist who has advised governments and international PR
+              networks.
             </p>
           </div>
         </div>

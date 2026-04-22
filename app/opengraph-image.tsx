@@ -102,7 +102,7 @@ export default async function OpengraphImage() {
           style={{
             marginTop: "auto",
             marginBottom: 28,
-            fontSize: 132,
+            fontSize: 140,
             lineHeight: 0.9,
             letterSpacing: "-0.025em",
             display: "flex",
@@ -113,10 +113,7 @@ export default async function OpengraphImage() {
           <span style={{ fontStyle: "italic", color: "#f73298" }}>
             Narrative.
           </span>
-          <span>
-            Growth —{" "}
-            <span style={{ fontStyle: "italic" }}>shipped.</span>
-          </span>
+          <span style={{ fontStyle: "italic" }}>Growth.</span>
         </div>
 
         {/* Footer row */}

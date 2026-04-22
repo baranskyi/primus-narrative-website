@@ -13,7 +13,7 @@ export function Hero() {
         <h1 className="font-serif font-normal text-[clamp(48px,11vw,148px)] leading-[0.9] tracking-[-0.025em] mt-5 md:mt-6 reveal">
           Strategy.<br />
           <em className="italic text-accent">Narrative.</em><br />
-          Growth — <em className="italic">shipped.</em>
+          <em className="italic">Growth.</em>
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8 md:gap-12 mt-10 md:mt-14 items-end reveal">

@@ -19,7 +19,7 @@ export function Quote() {
               &ldquo;
             </div>
             <blockquote className="font-serif text-[clamp(28px,6vw,56px)] leading-[1.1] tracking-tightest">
-              Strategy is useless if it does not ship.
+              Strategy is useless if it remains on paper.
               <br className="hidden md:block" />
               {" "}We build the{" "}
               <em className="italic text-accent">systems</em> that make good

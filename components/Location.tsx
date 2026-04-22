@@ -19,7 +19,7 @@ export function Location() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-ink">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-t border-b border-ink">
           <div className="p-6 md:p-8 border-b border-rule md:border-b-0 md:border-r md:border-rule">
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
               Office
@@ -32,7 +32,7 @@ export function Location() {
             </p>
           </div>
 
-          <div className="p-6 md:p-8 border-b border-rule md:border-b-0 md:border-r md:border-rule">
+          <div className="p-6 md:p-8">
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
               Hours
             </div>
@@ -43,26 +43,6 @@ export function Location() {
             <p className="text-[13px] text-mute mt-3">
               By appointment on Friday &amp; Saturday
             </p>
-          </div>
-
-          <div className="p-6 md:p-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
-              Coverage
-            </div>
-            <ul className="mt-3 md:mt-4 text-[15px] text-ink-2 space-y-1.5">
-              <li className="flex gap-2">
-                <span className="font-mono text-accent shrink-0">→</span> GCC · UAE, KSA, Qatar
-              </li>
-              <li className="flex gap-2">
-                <span className="font-mono text-accent shrink-0">→</span> EU · UK · US
-              </li>
-              <li className="flex gap-2">
-                <span className="font-mono text-accent shrink-0">→</span> English · Russian · Ukrainian
-              </li>
-              <li className="flex gap-2">
-                <span className="font-mono text-accent shrink-0">→</span> GCC, EU &amp; UK business hours
-              </li>
-            </ul>
           </div>
         </div>
       </div>

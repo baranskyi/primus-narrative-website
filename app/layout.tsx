@@ -27,7 +27,7 @@ const mono = JetBrains_Mono({
 const SITE_URL = "https://primusnarrative.com";
 const SITE_NAME = "Primus Narrative";
 const TAGLINE =
-  "Strategy, communications & growth — shipped. A Dubai consultancy for founders, boards and CMOs.";
+  "Strategy, communications and growth. A Dubai consultancy for founders, boards and CMOs.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -118,7 +118,7 @@ const organizationLd = {
   description:
     "Dubai consultancy for marketing strategy, public and corporate communications, and digital growth.",
   priceRange: "$$$",
-  slogan: "Strategy, narrative, growth — shipped.",
+  slogan: "Strategy. Narrative. Growth.",
   areaServed: [
     { "@type": "Country", name: "United Arab Emirates" },
     { "@type": "Country", name: "Saudi Arabia" },
