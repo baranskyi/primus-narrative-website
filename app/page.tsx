@@ -8,10 +8,12 @@ import { Founders } from "@/components/Founders";
 import { Location } from "@/components/Location";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { StructuredData } from "@/components/StructuredData";
 
 export default function HomePage() {
   return (
     <main className="relative">
+      <StructuredData />
       <Nav />
       <Hero />
       <Marquee />
