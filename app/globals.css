@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CORA design system tokens — adapted for Primus Narrative */
+:root {
+  --ink: #111014;
+  --ink-2: #2a2730;
+  --bone: #f3efe7;
+  --bone-2: #e9e3d6;
+  --paper: #faf7f0;
+  --rule: #1110141a;
+  --mute: #6b6459;
+  --accent: #f73298;
+  --accent-ink: #e02b8a;
+  --sage: #6b7a5a;
+
+  --maxw: 1280px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-image:
+    radial-gradient(rgba(17, 16, 20, 0.03) 1px, transparent 1px),
+    radial-gradient(rgba(17, 16, 20, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 40s linear infinite; }
+
+@keyframes pulse { 50% { opacity: 0.3; } }
+.pulse { animation: pulse 1.6s ease-in-out infinite; }
+
+@keyframes reveal-in {
+  to { opacity: 1; transform: none; }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal-in 0.9s ease-out forwards;
+}

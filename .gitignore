@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.env*.local
+.env
+.DS_Store
+*.log
+.vercel
+next-env.d.ts
+
+# Local runtime data from contact form fallback
+.data
+
+# OS / editor
+Thumbs.db
