@@ -28,7 +28,7 @@ export function StructuredData() {
         name: "Who are the founders of Primus Narrative?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Primus Narrative was co-founded by Slava Baranskyi (Founding Partner, Marketing & Growth — FCIM, Executive MBA candidate at IE Business School, 15+ years leading marketing for companies reaching tens of millions of users) and Anna Pavlova (Founding Partner, Strategic Communications — former advisor to the Ministry of Culture and the Cabinet of Ministers of Ukraine, former PR & Marketing Lead EMEA at FINN Partners London).",
+          text: "Primus Narrative was co-founded by Slava Baranskyi (Founding Partner, Marketing & Growth — FCIM, Executive MBA at IE Business School, 15+ years leading marketing for companies reaching tens of millions of users) and Anna Pavlova (Founding Partner, Strategic Communications — former advisor to the Ministry of Culture and the Cabinet of Ministers of Ukraine, former PR & Marketing Lead EMEA at FINN Partners London).",
         },
       },
       {

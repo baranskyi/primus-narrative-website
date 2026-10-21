@@ -118,10 +118,10 @@ export const founders: Founder[] = [
     short:
       "Growth-focused CMO, FCIM, and serial founder. 15+ years leading marketing strategy, brand building and automation across media, tech and fitness.",
     bio:
-      "Slava is a Chartered Marketer (Fellow of the Chartered Institute of Marketing) and Executive MBA candidate at IE Business School. He has led projects that attracted millions of users, generated 8-figure revenues, and built viral communities — including LIFEHACKER.RU (32M+ monthly users), Ukraine's first fully automated fitness club ecosystem, and the premium corporate media agency Palindrome. A CMO with an engineering mindset, he designs and operates agentic marketing systems in production rather than on slides.",
+      "Slava is a Chartered Marketer (Fellow of the Chartered Institute of Marketing) and Executive MBA at IE Business School. He has led projects that attracted millions of users, generated 8-figure revenues, and built viral communities — including LIFEHACKER.RU (32M+ monthly users), Ukraine's first fully automated fitness club ecosystem, and the premium corporate media agency Palindrome. A CMO with an engineering mindset, he designs and operates agentic marketing systems in production rather than on slides.",
     credentials: [
       "FCIM — Chartered Institute of Marketing (Fellow)",
-      "Executive MBA candidate, IE Business School",
+      "Executive MBA, IE Business School",
       "IMD Leaders Program",
       "Author, \"Doubt Challenge\" (Mann, Ivanov & Ferber)",
     ],

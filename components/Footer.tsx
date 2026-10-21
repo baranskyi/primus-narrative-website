@@ -29,10 +29,10 @@ export function Footer() {
             <ul className="space-y-1.5 normal-case tracking-normal text-[13px]">
               <li>
                 <a
-                  href="mailto:hello@primusnarrative.com"
+                  href="mailto:info@primusnarrative.com"
                   className="text-mute hover:text-accent"
                 >
-                  hello@primusnarrative.com
+                  info@primusnarrative.com
                 </a>
               </li>
               <li>

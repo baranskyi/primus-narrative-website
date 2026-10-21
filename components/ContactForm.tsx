@@ -63,10 +63,10 @@ export function ContactForm() {
         <p className="text-ink-2 text-[15px] mt-5">
           If your request is urgent, email{" "}
           <a
-            href="mailto:hello@primusnarrative.com"
+            href="mailto:info@primusnarrative.com"
             className="underline underline-offset-4 hover:text-accent"
           >
-            hello@primusnarrative.com
+            info@primusnarrative.com
           </a>{" "}
           directly.
         </p>

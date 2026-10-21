@@ -156,7 +156,7 @@ const organizationLd = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
-    email: "hello@primusnarrative.com",
+    email: "info@primusnarrative.com",
     areaServed: ["AE", "SA", "QA", "GB", "US", "EU"],
     availableLanguage: ["en", "ru", "uk"],
   },

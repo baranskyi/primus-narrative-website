@@ -38,10 +38,10 @@ export function Contact() {
                 Email
               </div>
               <a
-                href="mailto:hello@primusnarrative.com"
+                href="mailto:info@primusnarrative.com"
                 className="block font-serif text-[22px] md:text-[28px] leading-tight tracking-tight mt-2 text-bone hover:text-accent transition-colors break-words"
               >
-                hello@primusnarrative.com
+                info@primusnarrative.com
               </a>
             </div>
 
