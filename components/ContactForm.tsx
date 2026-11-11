@@ -52,19 +52,17 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-ink bg-paper p-8 md:p-10">
-        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
-          Received
-        </div>
-        <h3 className="font-serif text-[34px] leading-[1.05] tracking-tightest mt-4">
-          Thank you. <em className="italic text-accent">One of the partners</em>{" "}
-          will be in touch within one business day.
+      <div className="bg-cream p-6 text-ink sm:p-9" role="status">
+        <span className="label">Received</span>
+        <h3 className="mt-3.5 text-h3">
+          Thank you. <b>One of the partners</b> will be in touch within one
+          business day.
         </h3>
-        <p className="text-ink-2 text-[15px] mt-5">
+        <p className="mt-5">
           If your request is urgent, email{" "}
           <a
             href="mailto:info@primusnarrative.com"
-            className="underline underline-offset-4 hover:text-accent"
+            className="text-burgundy underline underline-offset-4"
           >
             info@primusnarrative.com
           </a>{" "}
@@ -73,76 +71,59 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] underline underline-offset-4 hover:text-accent"
+          className="btn btn-ghost mt-6"
         >
-          Send another message →
+          Send another message <span aria-hidden>→</span>
         </button>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      noValidate
-      className="border border-ink bg-paper p-6 md:p-10 grid md:grid-cols-2 gap-5"
-    >
-      <Field label="Your name" name="name" required />
-      <Field label="Work email" name="email" type="email" required />
-      <Field label="Company" name="company" required />
-      <Field label="Website or LinkedIn" name="website" placeholder="optional" />
-      <Select label="Service of interest" name="service" options={serviceOptions} />
-      <Select label="Indicative budget" name="budget" options={budgetOptions} />
+    <form onSubmit={onSubmit} noValidate className="bg-cream p-6 text-ink sm:p-9">
+      <div className="grid gap-x-4 sm:grid-cols-2">
+        <Field label="Your name" name="name" required autoComplete="name" />
+        <Field label="Work email" name="email" type="email" required autoComplete="email" />
+        <Field label="Company" name="company" required autoComplete="organization" />
+        <Field label="Website or LinkedIn" name="website" autoComplete="url" />
+        <Select label="Service of interest" name="service" options={serviceOptions} />
+        <Select label="Indicative budget" name="budget" options={budgetOptions} />
+      </div>
 
-      <label className="md:col-span-2 flex flex-col gap-2">
-        <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
-          Tell us about the work <span className="text-accent">*</span>
-        </span>
+      <div className="mb-4">
+        <label className="label mb-1.5 block" htmlFor="f-message">
+          Tell us about the work *
+        </label>
         <textarea
+          id="f-message"
           name="message"
-          rows={5}
           required
-          placeholder="What are you trying to achieve, and by when?"
-          className="border border-rule bg-bone px-4 py-3 font-sans text-[15px] text-ink placeholder:text-mute/70 focus:outline-none focus:border-ink transition-colors"
+          className="field-input min-h-[120px] resize-y"
         />
-      </label>
+      </div>
 
-      <label className="md:col-span-2 flex items-start gap-3 text-[13px] text-mute">
-        <input
-          type="checkbox"
-          name="consent"
-          required
-          className="mt-1 h-4 w-4 accent-[#f73298]"
-        />
+      <label className="mt-1.5 mb-5 flex gap-2.5 text-small">
+        <input type="checkbox" name="consent" required className="mt-1 h-4 w-4 shrink-0 accent-burgundy" />
         <span>
           I agree that Primus Narrative may contact me about my enquiry in line
           with its privacy practices.
         </span>
       </label>
 
-      <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-rule">
-        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-mute max-w-md">
-          We read every message and reply within one business day. All enquiries
-          are confidential.
-        </p>
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 bg-ink text-bone border border-ink px-5 py-2.5 text-sm font-medium hover:bg-accent hover:border-accent hover:text-white transition-colors disabled:opacity-60"
-        >
-          {status === "submitting" ? "Sending…" : "Send enquiry"}
-          <span aria-hidden>→</span>
-        </button>
-      </div>
+      <button type="submit" disabled={status === "submitting"} className="btn btn-primary disabled:opacity-60">
+        {status === "submitting" ? "Sending…" : "Send enquiry"} <span aria-hidden>→</span>
+      </button>
 
       {status === "error" && error && (
-        <p
-          role="alert"
-          className="md:col-span-2 text-[13px] text-accent-ink border border-accent/40 bg-accent/5 px-4 py-3 font-mono"
-        >
+        <p role="alert" className="mt-4 border border-burgundy bg-white px-4 py-3 text-small text-burgundy">
           {error}
         </p>
       )}
+
+      <p className="mt-3.5 text-[13px] text-taupe">
+        We read every message and reply within one business day. All enquiries
+        are confidential.
+      </p>
     </form>
   );
 }
@@ -152,28 +133,30 @@ function Field({
   name,
   type = "text",
   required,
-  placeholder,
+  autoComplete,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
-  placeholder?: string;
+  autoComplete?: string;
 }) {
+  const id = `f-${name}`;
   return (
-    <label className="flex flex-col gap-2">
-      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
+    <div className="mb-4">
+      <label className="label mb-1.5 block" htmlFor={id}>
         {label}
-        {required && <span className="text-accent"> *</span>}
-      </span>
+        {required && " *"}
+      </label>
       <input
+        id={id}
         type={type}
         name={name}
         required={required}
-        placeholder={placeholder}
-        className="border border-rule bg-bone px-4 py-3 font-sans text-[15px] text-ink placeholder:text-mute/70 focus:outline-none focus:border-ink transition-colors"
+        autoComplete={autoComplete}
+        className="field-input"
       />
-    </label>
+    </div>
   );
 }
 
@@ -186,25 +169,20 @@ function Select({
   name: string;
   options: string[];
 }) {
+  const id = `f-${name}`;
   return (
-    <label className="flex flex-col gap-2">
-      <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-mute">
+    <div className="mb-4">
+      <label className="label mb-1.5 block" htmlFor={id}>
         {label}
-      </span>
-      <select
-        name={name}
-        defaultValue=""
-        className="border border-rule bg-bone px-4 py-3 font-sans text-[15px] text-ink focus:outline-none focus:border-ink transition-colors"
-      >
-        <option value="" disabled>
-          Select one…
-        </option>
+      </label>
+      <select id={id} name={name} defaultValue="" className="field-input">
+        <option value="">Select one…</option>
         {options.map((o) => (
           <option key={o} value={o}>
             {o}
           </option>
         ))}
       </select>
-    </label>
+    </div>
   );
 }

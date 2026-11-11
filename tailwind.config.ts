@@ -1,43 +1,42 @@
 import type { Config } from "tailwindcss";
 
+// Values live as CSS variables in app/globals.css (brand tokens, guidelines 2026).
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: "#111014",
-          2: "#2a2730",
+        burgundy: {
+          DEFAULT: "var(--pn-burgundy)",
+          hover: "var(--pn-burgundy-hover)",
         },
-        bone: {
-          DEFAULT: "#f3efe7",
-          2: "#e9e3d6",
-        },
-        paper: "#faf7f0",
-        rule: "rgba(17, 16, 20, 0.1)",
-        mute: "#6b6459",
-        accent: {
-          DEFAULT: "#f73298",
-          ink: "#e02b8a",
-        },
-        sage: "#6b7a5a",
+        cream: "var(--pn-cream)",
+        ice: "var(--pn-ice)",
+        ink: "var(--pn-ink)",
+        taupe: "var(--pn-taupe)",
+        line: "var(--pn-line)",
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Times New Roman", "serif"],
-        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
-      },
-      maxWidth: {
-        container: "1280px",
+        serif: ["var(--pn-font-serif)"],
+        sans: ["var(--pn-font-sans)"],
       },
       fontSize: {
-        display: ["clamp(64px, 10vw, 148px)", { lineHeight: "0.9", letterSpacing: "-0.025em" }],
-        hero: ["clamp(40px, 5.5vw, 84px)", { lineHeight: "0.95", letterSpacing: "-0.022em" }],
-        "mono-xs": ["10px", { letterSpacing: "0.14em" }],
-        "mono-sm": ["11px", { letterSpacing: "0.14em" }],
+        display: ["var(--pn-size-display)", { lineHeight: "0.92" }],
+        h2: ["var(--pn-size-h2)", { lineHeight: "1" }],
+        h3: ["var(--pn-size-h3)", { lineHeight: "1" }],
+        body: ["var(--pn-size-body)", { lineHeight: "1.6" }],
+        small: ["var(--pn-size-small)", { lineHeight: "1.5" }],
+        label: ["var(--pn-size-label)", { letterSpacing: "var(--pn-tracking-label)" }],
       },
-      letterSpacing: {
-        tightest: "-0.025em",
+      spacing: {
+        gutter: "var(--pn-gutter)",
+        section: "var(--pn-section)",
+      },
+      maxWidth: {
+        container: "var(--pn-max)",
+      },
+      borderWidth: {
+        1.5: "1.5px",
       },
     },
   },

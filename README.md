@@ -12,7 +12,7 @@ Registered in the **Meydan Free Zone, Dubai, UAE**.
 - React 19
 - Tailwind CSS 3
 - TypeScript 5
-- Fonts: Fraunces (serif), Inter (sans), JetBrains Mono
+- Fonts: Cormorant Garamond (headings), Jost (text) via `next/font`
 
 ## Setup
 
@@ -45,13 +45,16 @@ The form posts JSON to `/api/contact`.
 app/
   layout.tsx           Root layout, fonts, metadata
   page.tsx             Home page composition
-  globals.css          Tailwind entry + design tokens
-  data.ts              Services, founders, capability tags
+  globals.css          Tailwind entry + brand tokens (--pn-*)
+  data.ts              Services and founders
+  opengraph-image.tsx  1200×630 social card in brand colours
+  icon.png             PN monogram favicon (+ apple-icon.png)
   api/contact/route.ts Contact form endpoint
 components/
   Nav.tsx
+  Logo.tsx             Text wordmark PRIMUS NARRATIVE
   Hero.tsx
-  Marquee.tsx
+  SectionIntro.tsx     Label + heading + lead block
   Services.tsx
   Studio.tsx
   Founders.tsx
@@ -63,9 +66,17 @@ components/
 
 ## Design
 
-Editorial, warm-neutral aesthetic inspired by the Claude Design "CORA" design
-system: cream canvas, deep ink type, ochre accent, Fraunces display serif,
-hairline rules and generous whitespace. CORA brand content is **not** used.
+Follows **Primus Narrative Brand Guidelines 2026** (Google Drive ›
+Primus Narrative Brand 2026; `04 Website` holds the reference homepage and
+`tokens.css`).
+
+- Colours: burgundy `#542536`, cream `#F4EFE7`, ice `#CDE5EF` (colour blocks
+  only, never text on light), ink `#1F1A1C`, taupe `#6B6159`, line `#D8CFC4`.
+  Tokens live in `app/globals.css` and are mapped to Tailwind colours.
+- Type: Cormorant Garamond 500 for headings, 700 for the accent word; Jost for
+  everything else. No italics, no monospace labels.
+- Square corners, one burgundy button per screen, partner portraits in black
+  and white at 4:3.
 
 ## Founders
 

@@ -1,26 +1,18 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Geist, JetBrains_Mono } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 
-const serif = Instrument_Serif({
+const serif = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: ["400"],
-  style: ["normal", "italic"],
+  weight: ["500", "700"],
   display: "swap",
 });
 
-const sans = Geist({
+const sans = Jost({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -93,11 +85,6 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-  },
   other: {
     "geo.region": "AE-DU",
     "geo.placename": "Dubai, Meydan Free Zone",
@@ -111,7 +98,7 @@ const organizationLd = {
   "@type": "ProfessionalService",
   "@id": `${SITE_URL}#organization`,
   name: SITE_NAME,
-  alternateName: "Primus Narrative FZ-LLC",
+  alternateName: "Primus Narrative L.L.C-FZ",
   url: SITE_URL,
   logo: `${SITE_URL}/opengraph-image`,
   image: `${SITE_URL}/opengraph-image`,
@@ -208,7 +195,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${sans.variable} ${mono.variable}`}
+      className={`${serif.variable} ${sans.variable}`}
     >
       <head>
         <script
@@ -220,7 +207,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
       </head>
-      <body className="font-sans bg-bone text-ink">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

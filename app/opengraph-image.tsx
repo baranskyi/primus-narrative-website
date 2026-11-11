@@ -6,6 +6,12 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Brand tokens (app/globals.css)
+const BURGUNDY = "#542536";
+const CREAM = "#F4EFE7";
+const ICE = "#CDE5EF";
+const TAUPE = "#6B6159";
+
 async function loadFont(url: string) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Font fetch failed: ${res.status}`);
@@ -13,28 +19,36 @@ async function loadFont(url: string) {
 }
 
 export default async function OpengraphImage() {
-  // Google Fonts raw WOFF2 — stable, cached by Vercel Edge
-  const [serif, serifItalic, mono] = await Promise.all([
+  // Google Fonts raw TTF — Satori cannot read WOFF2
+  const [serif, serifBold, sans] = await Promise.all([
     loadFont(
-      "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-2zI.ttf"
+      "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_s06GnM.ttf"
     ).catch(() => null),
     loadFont(
-      "https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zATiw.ttf"
+      "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_hg9GnM.ttf"
     ).catch(() => null),
     loadFont(
-      "https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPQ.ttf"
+      "https://fonts.gstatic.com/s/jost/v20/92zPtBhPNqw79Ij1E865zBUv7myRJQVG.ttf"
     ).catch(() => null),
   ]);
 
   const fonts: Array<{
     name: string;
     data: ArrayBuffer;
-    style: "normal" | "italic";
-    weight: 400;
+    style: "normal";
+    weight: 500 | 700;
   }> = [];
-  if (serif) fonts.push({ name: "Instrument Serif", data: serif, style: "normal", weight: 400 });
-  if (serifItalic) fonts.push({ name: "Instrument Serif", data: serifItalic, style: "italic", weight: 400 });
-  if (mono) fonts.push({ name: "JetBrains Mono", data: mono, style: "normal", weight: 400 });
+  if (serif) fonts.push({ name: "Cormorant Garamond", data: serif, style: "normal", weight: 500 });
+  if (serifBold) fonts.push({ name: "Cormorant Garamond", data: serifBold, style: "normal", weight: 700 });
+  if (sans) fonts.push({ name: "Jost", data: sans, style: "normal", weight: 500 });
+
+  const label = {
+    fontFamily: "Jost, sans-serif",
+    fontWeight: 500,
+    fontSize: 17,
+    letterSpacing: "3.4px",
+    textTransform: "uppercase" as const,
+  };
 
   return new ImageResponse(
     (
@@ -44,101 +58,62 @@ export default async function OpengraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#f3efe7",
-          color: "#111014",
-          padding: "56px 72px",
-          fontFamily: "Instrument Serif, serif",
+          background: CREAM,
+          color: BURGUNDY,
+          padding: "60px 72px",
+          fontFamily: "Cormorant Garamond, serif",
           position: "relative",
         }}
       >
-        {/* Top bar (mono) */}
+        {/* Ice block at the right edge */}
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: 18,
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            color: "#6b6459",
-            fontFamily: "JetBrains Mono, monospace",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: 300,
+            background: ICE,
           }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <div
-              style={{
-                width: 12,
-                height: 12,
-                borderRadius: 999,
-                background: "#f73298",
-              }}
-            />
-            <span>Dubai · Meydan Free Zone</span>
-          </div>
-          <div>primusnarrative.com</div>
-        </div>
+        />
 
         {/* Wordmark */}
-        <div
-          style={{
-            marginTop: 36,
-            fontSize: 52,
-            letterSpacing: "-0.015em",
-            display: "flex",
-            alignItems: "baseline",
-            gap: 12,
-          }}
-        >
-          <span>
-            Pr<span style={{ color: "#f73298", fontStyle: "italic" }}>i</span>
-            mus
-          </span>
-          <span style={{ color: "#6b6459" }}>·</span>
-          <span style={{ fontStyle: "italic" }}>Narrative</span>
+        <div style={{ fontSize: 30, fontWeight: 500, letterSpacing: "7px" }}>
+          PRIMUS NARRATIVE
         </div>
+        <div style={{ ...label, marginTop: 18 }}>Dubai · Meydan Free Zone</div>
 
-        {/* Headline (Instrument Serif) */}
+        {/* Brand line, Narrative in bold */}
         <div
           style={{
             marginTop: "auto",
-            marginBottom: 28,
-            fontSize: 140,
-            lineHeight: 0.9,
-            letterSpacing: "-0.025em",
+            marginBottom: 30,
+            fontSize: 108,
+            fontWeight: 500,
+            lineHeight: 0.92,
             display: "flex",
             flexDirection: "column",
           }}
         >
           <span>Strategy.</span>
-          <span style={{ fontStyle: "italic", color: "#f73298" }}>
-            Narrative.
-          </span>
-          <span style={{ fontStyle: "italic" }}>Growth.</span>
+          <span style={{ fontWeight: 700 }}>Narrative.</span>
+          <span>Growth.</span>
         </div>
 
-        {/* Footer row */}
+        {/* Burgundy hairline above the footer row */}
         <div
           style={{
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "flex-end",
-            borderTop: "1px solid rgba(17,16,20,0.2)",
-            paddingTop: 18,
-            fontSize: 18,
-            fontFamily: "JetBrains Mono, monospace",
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "#2a2730",
+            width: 756,
+            borderTop: `1.5px solid ${BURGUNDY}`,
+            paddingTop: 16,
+            ...label,
+            color: TAUPE,
           }}
         >
-          <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
-            <span>Marketing</span>
-            <span style={{ color: "#f73298", fontSize: 24 }}>·</span>
-            <span>Communications</span>
-            <span style={{ color: "#f73298", fontSize: 24 }}>·</span>
-            <span>Growth</span>
-          </div>
-          <div style={{ color: "#6b6459" }}>Est. 2026</div>
+          <span>Strategy · Communications · Growth</span>
+          <span>primusnarrative.com</span>
         </div>
       </div>
     ),

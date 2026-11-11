@@ -102,11 +102,8 @@ export type Founder = {
   bio: string;
   credentials: string[];
   linkedin: string;
-  linkedinLabel: string;
-  initials: string;
-  photo: string | null;
+  photo: string;
   photoPosition?: string;
-  accent: "pink" | "ink";
   location: string;
 };
 
@@ -126,11 +123,8 @@ export const founders: Founder[] = [
       "Author, \"Doubt Challenge\" (Mann, Ivanov & Ferber)",
     ],
     linkedin: "https://www.linkedin.com/in/baranskiy/",
-    linkedinLabel: "linkedin.com/in/baranskiy",
-    initials: "SB",
     photo: "/founders/slava.jpg",
-    photoPosition: "center 25%",
-    accent: "ink",
+    photoPosition: "center 45%",
     location: "Dubai · Kyiv",
   },
   {
@@ -148,24 +142,8 @@ export const founders: Founder[] = [
       "Former advisor to the Ministry of Culture & Cabinet of Ministers of Ukraine",
     ],
     linkedin: "https://www.linkedin.com/in/anna-pavlova-08001731/",
-    linkedinLabel: "linkedin.com/in/anna-pavlova-08001731",
-    initials: "AP",
     photo: "/founders/anna.jpg",
-    photoPosition: "58% 30%",
-    accent: "pink",
+    photoPosition: "center 37%",
     location: "Dubai · London",
   },
-];
-
-export const clientMarquee = [
-  "Strategy",
-  "Communications",
-  "Brand",
-  "Growth",
-  "AI Operations",
-  "Public Affairs",
-  "Crisis",
-  "Narrative",
-  "Reputation",
-  "Performance",
 ];
