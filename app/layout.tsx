@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const serif = Cormorant_Garamond({
-  subsets: ["latin"],
+// Self-hosted Google Fonts (OFL), latin subset, variable weight.
+// next/font/google failed on Vercel's Turbopack build, so the files live in the repo.
+const cormorant = localFont({
+  src: "./fonts/cormorant-garamond-latin.woff2",
   variable: "--font-serif",
-  weight: ["500", "700"],
+  weight: "500 700",
   display: "swap",
+  adjustFontFallback: "Times New Roman",
 });
 
-const sans = Jost({
-  subsets: ["latin"],
+const jost = localFont({
+  src: "./fonts/jost-latin.woff2",
   variable: "--font-sans",
-  weight: ["400", "500", "600"],
+  weight: "400 600",
   display: "swap",
 });
 
@@ -195,7 +198,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${serif.variable} ${sans.variable}`}
+      className={`${cormorant.variable} ${jost.variable}`}
     >
       <head>
         <script
